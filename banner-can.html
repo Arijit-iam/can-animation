@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D model</title>
+  <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+    }
+
+    #action {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 50px;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      z-index: 3;
+    }
+
+    #banner-canvas-wpr {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      z-index: 100;
+      /* background-color: #000; */
+    }
+  </style>
+
+  <!-- <ul id="action">
+    <li><button data-value="0">skin 1</button></li>
+    <li><button data-value="1">skin 2</button></li>
+    <li><button data-value="2">skin 3</button></li>
+  </ul> -->
+
+  <!-- <div style="height: 100vh;"></div> -->
+  <div class="banner-canvas-wpr" id="banner-canvas-wpr" style="width: 100%; height: 100vh;"></div>
+  <!-- <div style="height: 100vh;"></div> -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" crossorigin="anonymous"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js"></script>
+  <!-- <script
+      src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"
+      crossorigin="anonymous"
+    ></script> -->
+  <!-- <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/RGBELoader.js"></script> -->
+
+  <!-- <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="banner-can.js" crossorigin="anonymous"></script>
+
+  <script>
+
+    if ($("#banner-canvas-wpr").length) {
+      let caioTl = gsap.timeline();
+      const el = document.querySelector("#banner-canvas-wpr");
+      let item = el.querySelector("#banner-canvas-wpr canvas");
+      gsap.set(objGroup2.rotation, { y: -2.15 });
+
+      caioTl
+
+        .to(objGroup2.rotation, {
+          y: 4.1,
+        })
+        .pause();
+
+
+      // ScrollTrigger.create({
+      //   trigger: "#banner-canvas-wpr",
+      //   start: "top top",
+      //   end: "+=200%",
+      //   animation: caioTl,
+      //   toggleActions: "play none none none",
+      //   invalidateOnRefresh: true,
+      //   scrub: 0.1,
+      //   pin: true,
+      //   markers: true,
+      // });
+
+    }
+  </script>
+</body>
+
+</html>
